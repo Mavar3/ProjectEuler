@@ -20,7 +20,7 @@ print("Ответ \"" + str(sum) + "\" является верным" + "\n")
 # -----------------------------------------------
 
 print('''Вторая задача!
-\"Чётные числа Фибоначи, в пределах 4 000 000\":''', end = " ")
+\"Чётные числа Фибоначчи, в пределах 4 000 000\":''', end = " ")
 
 fibonach = [1, 2]   #Первые два члена последовательности Фибоначи
 i = 1               #Позиция последнего текущего элемента
@@ -45,20 +45,21 @@ print('''Третья задача!
 
 def Zadch3(number):
 
-    prime_numbers = [2]
-    i = 0
+    a = False
 
-    for i in range (3, int((number + 1) / 2), 2):     #Простые числа
-        for j in range (3, i + 1, 2):
-            if i % j != 0:
-                continue
+    for i in range (int(number / 2), 1, -1):       #Простые числа 
+        if a:
+            break
+        for j in range (3, i + 1, 2):                   #На которые может делиться
+            if i % j != 0:                              #Наше основное число.
+                continue                                #Поэтому (number + 1) / 2
             elif i == j:
-                prime_numbers += [i]
+                if number % i == 0:
+                    print(i)
+                    a = True
                 break
             else:
-                break
-    
-    print(prime_numbers)            
+                break     
 
 
-Zadch3(test_number)
+Zadch3(number)
