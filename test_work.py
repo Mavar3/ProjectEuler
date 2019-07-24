@@ -36,30 +36,48 @@ print("Ответ \"" + str(sum) + "\" является верным" + "\n")
 # ------------------------------------------------
 # ---------------------Задача №3------------------
 # -----------------------------------------------
-
+'''
 number = 600851475143
 test_number = 13195     # Его делители должны быть 5, 7, 13 и 29
 
-print('''Третья задача!
-\"Наибольший простой делитель чила ''' + str(number) + "\":", end = " ")
+print('Третья задача!'
+print('\"Наибольший простой делитель чила ' + str(number) + '\":', end = " ")
 
 def Zadch3(number):
 
-    a = False
 
     for i in range (int(number / 2), 1, -1):       #Простые числа 
-        if a:
-            break
         for j in range (3, i + 1, 2):                   #На которые может делиться
             if i % j != 0:                              #Наше основное число.
                 continue                                #Поэтому (number + 1) / 2
             elif i == j:
                 if number % i == 0:
                     print(i)
-                    a = True
+                    return
                 break
             else:
                 break     
 
 
 Zadch3(number)
+'''
+
+# ------------------------------------------------
+# ---------------------Задача №4------------------
+# -----------------------------------------------
+
+def Task4():
+    palindrome = list()
+    for i in range (999, 0, -1):
+        for j in range (i, 0, -1):
+            test = 0
+            for k in range(0, int (len (str (i * j)) / 2), 1):
+                if str(i * j)[k] == str(i * j)[len(str(i * j)) - 1 - k]:
+                    test += 1
+                if test == int (len (str (i * j)) / 2):
+                    palindrome += [i * j]
+    print(max(palindrome))
+    
+                    
+
+Task4()
