@@ -66,16 +66,22 @@ Zadch3(number)
 # ---------------------Задача №4------------------
 # -----------------------------------------------
 
-def Task4():
+print ("Вторая задача!")
+print("\"Наибольшее произведение-палиндром\":", end = " ")
+
+def Task4():   
+    '''Наибольшее произведение-палиндром среди трёхзначных чисел'''
     palindrome = list()
-    for i in range (999, 0, -1):
-        for j in range (i, 0, -1):
+    for i in range (999, 99, -1):
+        for j in range (i, 99, -1):
             test = 0
             for k in range(0, int (len (str (i * j)) / 2), 1):
                 if str(i * j)[k] == str(i * j)[len(str(i * j)) - 1 - k]:
                     test += 1
                 if test == int (len (str (i * j)) / 2):
                     palindrome += [i * j]
+                    
+
     print(max(palindrome))
     
                     
