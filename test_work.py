@@ -95,17 +95,26 @@ print("\"Наименьшее кратное\":", end = " ")
 # 2520 - самое маленькое число, которое делится без остатка на все числа от 1 до 10.
 # Какое самое маленькое число делится нацело на все числа от 1 до 20?
 
-def Task5():
+def Task5(number):
     ''' Какое самое маленькое число делится нацело на все числа от 1 до 20? '''
-    number = 20
+    
+    list_of = list()
+    
+    for i in range(number, int(number / 2), -1):
+        list_of.append(i)
+
     koll = 0
-    while koll != 20:
+
+    while koll < len(list_of):
         koll = 0
         number += 1
-        for i in range(1, 21):
+        for i in list_of:
             if number % i == 0:
                 koll += 1
+            else:
+                break
         
     print(number)
 
-Task5()
+number = 20
+Task5(number)
