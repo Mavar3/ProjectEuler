@@ -98,41 +98,75 @@ print("\"Наименьшее кратное\":", end = " ")
 # Думает 2 минуты 4 секунды
 
 def Task5(number):
-    ''' Какое самое маленькое число делится нацело на все числа от 1 до 20? '''
+    # Какое самое маленькое число делится нацело на все числа от 1 до 20?
     
     list_of = list()
     
     for i in range(number, int(number / 2), -1):
         list_of.append(i)
 
-    koll = 0
+    counter = 0
 
-    while koll < len(list_of):
-        koll = 0
+    while counter < len(list_of):
+        counter = 0
         number += 1
         for i in list_of:
             if number % i == 0:
-                koll += 1
+                counter += 1
             else:
                 break
         
-    print(number)
+    print("Ответ \"" + str(number) + "\" является верным" + "\n")
 
 number = 20
 Task5(number)
 
- # from math import abs
+# ------------------------------------------------
+# ---------------------Задача №6------------------
+# -----------------------------------------------
 
-def Task6(num):
+print ("Шестая задача!")
+print("\"Разность между суммой квадратов и квадратом суммы\":", end = " ")
+
+def Task6(number):
     
     summ = 0
     sum_kvad = 0
     
-    for i in range (1, num + 1):
+    for i in range (1, number + 1):
         summ += i
         sum_kvad += i**2
         
-    print(-(sum_kvad - summ**2))
+    print("Ответ \"" + str(abs(sum_kvad - summ**2)) + "\" является верным" + "\n")
 
-num = 100
-Task6(num)
+number = 100
+Task6(number)
+
+# ------------------------------------------------
+# ---------------------Задача №7------------------
+# -----------------------------------------------
+
+print ("Седьмая задача!")
+print("\"10001-ое простое число\":", end = " ")
+
+def Task7(number):
+    
+    counter = 1
+    main_counter = 1
+    score = 0
+
+    while main_counter < number:
+        counter += 2
+        for i in range(3, counter + 1, 2):
+            if counter % i != 0:
+                continue
+            elif counter == i:
+                main_counter += 1
+                score = i
+                break
+            else:
+                break
+    print("Ответ \"" + str(score) + "\" является верным" + "\n")
+
+number = 10001
+Task7(number)
